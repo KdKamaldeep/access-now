@@ -1,0 +1,86 @@
+﻿<div class="block type-13 scroll-to-block" data-rel="6">
+    <div class="container">
+
+        <div class="row wow fadeInDown">
+            <div class="block-header col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
+                <h2 class="title">Bundle And Save</h2>
+                <div class="text">Integer faucibus, dui quis pellentesque vestibulum, nulla ante aliquet turpis, in consectetur ex dui vitae erat in eleifend eros</div>
+            </div>
+        </div>
+
+        <div class="circle-slide-box wow fadeInUp">
+            <div class="swiper-container connected-to-bottom-swiper" data-autoplay="0" data-loop="0" data-speed="500" data-center="1"
+                data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="2" data-lg-slides="3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" ng-repeat="service in Services" ng-click="AddToCircles(service,$index)">
+                        <img class="img-circle" src="{{service.Image}}" alt="" />
+
+                    </div>
+                    <!--<div class="swiper-slide">
+                        <img class="img-circle" src="img/icon-64.png" alt="" />
+                    </div>
+                    <div class="swiper-slide default-active">
+                        <img class="img-circle" src="img/icon-65.png" alt="" />
+                    </div>-->
+                    <!--<div class="swiper-slide">
+                        <img class="img-circle" src="img/icon-64.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img-circle" src="img/icon-65.png" alt="" />
+                    </div>-->
+                </div>
+                <div class="pagination"></div>
+            </div>
+        </div>
+
+        <div class="circle-description-slide-box row">
+
+            <div class="swiper-container connected-to-top-swiper" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
+                            <h3 class="title">1. Starter Plan</h3>
+                            <div class="text"><b>40GB</b> Storage Space with <b>150GB</b> Bandwidth at <b>$7</b><span>/per month</span> </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
+                            <h3 class="title">2. Advanced Plan</h3>
+                            <div class="text"><b>40GB</b> Storage Space with <b>150GB</b> Bandwidth at <b>$7</b><span>/per month</span> </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide default-active">
+                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
+                            <h3 class="title">3. Premium Plan</h3>
+                            <div class="text"><b>40GB</b> Storage Space with <b>150GB</b> Bandwidth at <b>$7</b><span>/per month</span> </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="pagination"></div>
+            </div>
+            <div class="oImageUploaderBox oPortraitMedium" ng-repeat="circle in Circles">
+                <img src="{{circle.Image}}" ng-show="circle.Added" />
+                <i class="glyphicon glyphicon-remove circleClose" ng-show="circle.Added" ng-click="RemoveCircle(circle)"
+                    >&nbsp;</i>
+                <img src="img/white.png" ng-show="!circle.Added" />
+            </div>
+            <div style="clear: both;"></div>
+            <div>
+                <button class="btnContinue" ng-click="AddToCard()" ng-show="!ShowCheckOutButton && ShowAddButton" style="width: 230px; float: right; margin-top: 20px;"
+                    ng-show="ShowAddButton">
+                    Add To Cart</button>
+                <a href="#/cart" class="btnContinue" ng-show="ShowCheckOutButton" style="width: 230px; float: right; margin-top: 20px;"
+                    ng-show="ShowAddButton">Review & Checkout</a>
+            </div>
+            <!--<div class="oImageUploaderBox oPortraitMedium">
+                <img src="img/white.png" />
+            </div>
+            <div class="oImageUploaderBox oPortraitMedium">
+                <img src="img/white.png" />
+            </div>-->
+        </div>
+
+    </div>
+</div>

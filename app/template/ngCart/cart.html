@@ -1,0 +1,92 @@
+<div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
+    Your cart is empty
+</div>
+
+<div class="bodytag">
+    <div class="alert alert-danger" ng-show="ngCart.ErrorMessage!=''">{{ngCart.ErrorMessage}}</div>
+
+
+    <ul class='item-list ul' ng-show="ngCart.getTotalItems() > 0">
+        <li ng-show="ngCart.hasHostingPackage()">
+            <a href="javascript:" ng-click="ngCart.removeHosting(item)" class="removeHosting">Remove</a>
+            <span
+                class='sum js-subtotal swan'><i class="hostingAded"></i><b>Hosting</b> : {{ ngCart.getHosting() !=null ? ngCart.getHosting().name : '' }} for {{ ngCart.getHosting() !=null ? ngCart.getHosting().price : 0 | currency}}/per year</span>
+
+        </li>
+        <li ng-show="!ngCart.hasHostingPackage()">
+            <span class="hasHostingPackage">No Hosting added for doamin(s). Please <a href="#/hosting">click here</a> to add</span>
+        </li>
+    </ul>
+    <ul class='item-list ul '>
+
+        <li class='item' ng-repeat="item in ngCart.getCart().items track by $index">
+            <div class="item__information information">
+
+                <div class='item__body'>
+                    <h2 ng-class="{noHosting : item.NoHosting}" class='item__title'>{{item.getName()}} &nbsp; &nbsp; </h2>
+                    <!--<a ng-show="!item.hasHosting()" href="#/{{item.getId()}}">Add Hosting</a>
+                    <span style="color: green !important;" class='js-subtotal' ng-show="item.hasHosting()">Hosting : {{item.getHosting().name}} for {{ item.getHosting().price | currency}}</span>-->
+                    <!--<a href="javascript:" ng-click="ngCart.removeHosting(item)" ng-show="item.hasHosting()">Remove</a>-->
+                    <p class='item__description bodytagfont'></p>
+                </div>
+                <div class='item__price js-item-price bodytagfont'>
+                    {{ item.getPrice() | currency}}<br />
+                </div>
+            </div>
+
+            <div class='item__interactions bodytagfont'>
+                <p class='item__quantity'>
+                    <!--<a class='js-item-increase' title='Add another copy'>+</a>
+                    <a class='js-item-decrease decrease--disabled' title='Remove a copy'>-</a>-->
+                    <span data-quantity='1'>Terms :
+                    </span>
+                    <select class="termselect" ng-change="item.setTerms(item._terms)" ng-model="item._terms">
+                        <option ng-selected="{{year==item._terms}}" ng-repeat="year in [1,2,3,4,5,6,7,8,9,10]" value="{{year}}">{{year}} year(s)</option>
+                    </select>
+                </p>
+                <a class='item__remove js-item-remove' ng-click="ngCart.removeItemById(item.getId())" title='Remove this item'>&times;</a>
+            </div>
+        </li>
+
+    </ul>
+    <div class='summary js-summary bodytagfont' ng-show="ngCart.getTotalItems() > 0">
+        <ul class="steps ul">
+            <li>
+                <div class="field select-field">
+                    <div class="field password-field" data-bind="validation:password" data-required="false">
+                        <div class="password-input">
+                            <input type="text" class="agentinput" placeholder="Agent #" ng-model="ngCart.Agent" />
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class='steps ul'>
+
+
+            <li>
+                <b>Subtotal:</b>
+                <span class='sum js-subtotal'>{{ ngCart.getSubTotal() | currency}}</span>
+            </li>
+            <li>
+                <b>Taxes ({{ ngCart.getTaxRate() }}%):</b>
+                <span class='sum js-taxes'>{{ ngCart.getTax() | currency }}</span>
+            </li>
+        </ul>
+        <ul class='checkout ul'>
+            <li>
+                <b>Total:</b>
+                <span class='sum js-total'>{{ ngCart.totalCost() | currency }}</span>
+            </li>
+            <li>
+                <a href="javascript:" ng-click="ngCart.ValidateCart('/checkout')" class='btnContinue js-checkout-button checkout"'>Checkout</a>
+                <br />
+                <a href="#/hosted-domains" class='btnContinue js-checkout-button checkout"'>Continue Shopping</a>
+            </li>
+        </ul>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+
+

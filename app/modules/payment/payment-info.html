@@ -1,0 +1,86 @@
+﻿<div class="content pad-vert-medium">
+    <div class="javascript-only">
+        <div class="step active-section" id="userSignup">
+            <fieldset>
+                <div class="intro">
+                    <h4>Payment Options</h4>
+                    <p>Curabitur nunc neque, mollis viverra ex in, auctor elementum mi. Donec non purus felis. Duis interdum mi id purub</p>
+                </div>
+            </fieldset>
+
+            <div class="pad-vert-small">
+                <fieldset class="border-top pad-top-small">
+                    <form stripe-form="MakePayment" name="myForm" class="paymform">
+                        <div class="grid-1-2 grid-row-line-height-space">
+                            <div class="column">
+                                <div class="field email-field" data-bind="validation:email" data-required="false">
+                                    <label for="email">Card *</label>
+                                    <div class="input-element">
+                                        <input type="text" name="number" class="input-block-level" ng-model="number"
+                                            payments-validate="card" payments-format="card" payments-type-model="type" ng-class="myForm.number.$card.type" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column columnRight">
+                                <div class="field email-field" data-bind="validation:emailConfirmation" data-required="false">
+                                    <label for="email_confirmation">Expiry *</label><div class="input-element">
+                                        <input type="text" class="input-block-level" payments-validate="expiry" payments-format="expiry" ng-model="expiry" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="grid-1-2 grid-row-line-height-space pad-top-line-height">
+                            <div class="column">
+                                <div class="field password-field" data-bind="validation:password" data-required="false">
+                                    <label for="password">Name On Card *</label><div class="password-input">
+                                        <input type="text" class="input-block-level" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column columnRight">
+
+                                <div class="field password-field" data-bind="validation:password" data-required="false">
+                                    <label for="password">CVC *</label><div class="password-input">
+                                        <input type="password" class="input-block-level"
+                                            ng-model="cvc" payments-validate="cvc" payments-format="cvc" payments-type-model="type" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+
+                        <div style="clear: both;"></div>
+                        <div class="button-field grid-1-2 grid-row-line-height-space">
+                            <div class="column">
+                                <p class="disclaimer align-left">
+                                    By continuing, Yo will be charged as per domain you selected.
+                                    <br />
+                                    Please read our <a href="#">Agreement</a>
+                                    and <a href="#">Privacy Policy</a> for more information.
+                                </p>
+                            </div>
+
+                            <div class="column">
+                                <div class="ng-isolate-scope" style="width: 100%;">
+                                    <button class="btnContinue"
+                                        ng-disabled="myForm.$invalid || IssuePaymentRequestInProgress"
+                                        type="submit" style="width: 100%;" value="Submit" ng-show="!IssuePaymentRequestInProgress">
+                                        {{PaymentButtonText}}</button>
+
+                                    <progressbar class="progress-striped active" animate="true" ng-show="IssuePaymentRequestInProgress"
+                                        max="100" value="ProgComplete" type="success"><i></i></progressbar>
+                                </div>
+
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+    </div>
+</div>

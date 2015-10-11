@@ -1,0 +1,48 @@
+﻿<div class="block type-8">
+    <div class="container">
+        <div class="row">
+            <div class="form-description col-md-4 wow fadeInLeft">
+                <h3 class="title">Search You Domain Name</h3>
+                <div class="text"><b>Domains only from</b> <b><span>$25.00</span></b><small>/per year</small></div>
+            </div>
+            <div class="block-form-wrapper col-md-8 wow fadeInRight">
+                <div class="block-form">
+                    <form class="domainVerifyButton">
+                        <input type="text" ng-model="DomainName" placeholder="Enter your domain name ..." value="">
+                        <input type="submit" busy="Submitting.." class="{{LodingClass}}" value="" ng-click="DomainHelper.Verify()">
+                        <div class="prefix">
+                            <div class="selected-text">.com</div>
+                            <div class="prefix-drop-down">
+                                <div class="active">.com</div>
+                                <div>.net</div>
+                                <div>.org</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <ul class="links-examples">
+                    <li><a href="host-domains.html">View Domain Price List</a></li>
+                    <li><a href="host-domains.html">Bulk Domain Search</a></li>
+                    <li><a href="host-domains.html">Transfer Domain</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-show="StatusCode.AVAILABLE()" class="form-description col-md-10 wow fadeInLeft">
+                <h3 class="title"><i class="glyphicon glyphicon-ok"></i>YES! YOUR DOMAIN IS AVAILABLE. BUY IT BEFORE SOMEONE ELSE DOES.</h3>
+
+                <div class="text topmargin14">
+                    <b>{{DomainAvailable}}</b> <b><span>$25.00</span></b><small>/per year</small>
+                    <a class="button" ng-show="AddInCart" ng-click="DomainHelper.MoveToCheckout()" href="Javascript:">Add To Cart</a>
+                    <a class="button" ng-show="!AddInCart" ng-click="DomainHelper.MoveToCheckout()" href="Javascript:">Proceed to CheckOut</a>
+                </div>
+            </div>
+            <div ng-show="StatusCode.UNAVAILABLE()" class="form-description col-md-10 wow fadeInLeft">
+                <h3 class="title"><i class="glyphicon glyphicon-alert"></i>Sorry, <b>{{DomainAvailable}}</b> is taken.</h3>
+            </div>
+            <div ng-show="StatusCode.FAILURE()" class="form-description col-md-10 wow fadeInLeft">
+                <h3 class="title"><i class="glyphicon glyphicon-alert"></i>SOMETHING WENT WRONG, PLEASE TRY AGAIN LATER.</h3>
+            </div>
+        </div>
+    </div>
+</div>

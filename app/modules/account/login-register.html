@@ -1,0 +1,107 @@
+﻿<!-- BLOCK "TYPE 18" -->
+<!--<div class="block">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-md-offset-3 wow fadeInUp">
+                <div class="form-block">
+                    <img class="img-circle form-icon" src="img/icon-118.png" alt="" />
+
+                    <div class="form-wrapper">
+                        <div class="row">
+
+                            <div class="block-header">
+                                <h2 class="title">Login Form</h2>
+                                <div class="text">Curabitur nunc neque, mollis viverra ex in, auctor elementum mi. Donec non purus felis. Duis interdum mi id purub</div>
+                            </div>
+                        </div>
+                        <form name="LoginForm" ng-submit="AccountHelper.Login()">
+                            <div class="field-entry">
+                                <label for="field-1">Email Address *</label>
+                                <input type="email" name="Email" required ng-model="LoginModel.Email" id="field-1" />
+                                
+                            </div>
+                            <div class="field-entry">
+                                <label for="field-2">Your Password *</label>
+                                <input type="password" name="Password" ng-model="LoginModel.Password" required id="field-2" />
+                                
+                            </div>
+                            <a class="simple-link" href="Javascript:"><span class="glyphicon glyphicon-chevron-right"></span>Forgot Password?</a><br />
+                            <a class="simple-link" href="#/registration"><span class="glyphicon glyphicon-chevron-right"></span>Register Now</a><br />
+                           
+                            <div class="button" busy="Logging You In.." by-when-url="/api/user/login"us>Login<input  type="submit" value="Login" /></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+
+        </div>
+    </div>
+</div>-->
+<div class="contentWrap pad-vert-medium">
+
+    <div class="javascript-only">
+        <div class="step active-section"  id="userSignup">
+            <fieldset>
+                <div class="intro">
+                    <h4>Let’s get started.</h4>
+                    <p>Signing in for AccessNow is fast and free — no commitments or long-term contracts.</p>
+                </div>
+            </fieldset>
+            <div class="pad-vert-small">
+                <fieldset class="border-top pad-top-small">
+                    <form  ng-submit="AccountHelper.Login()" id="user-signup-form" method="post" >
+                        <div style="width:50%;margin:0px auto;">
+                        <div class="grid-1-2 grid-row-line-height-space">
+                            <div class="column" style="width:100%;">
+                                <div class="field email-field" data-bind="validation:email" data-required="false">
+                                    <label for="email">Email</label>
+                                    <div class="input-element">
+                                        <input type="email" name="Email" required ng-model="LoginModel.Email" id="field-1" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column " style="width:100%;">
+                                <div class="field email-field" data-bind="validation:emailConfirmation" data-required="false">
+                                    <label for="email_confirmation">Password</label><div class="input-element">
+                                        <input type="password" name="Password" ng-model="LoginModel.Password" required id="field-2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>                        
+                        <div style="clear: both;"></div>
+                        <div class="loginButton grid-1-2 grid-row-line-height-space">
+                            
+                            <div class="column">
+
+                                <div class="ng-isolate-scope" style="width: 100%;">
+                                    <button class="btnContinue" busy="Logging You In.." by-when-url="/api/user/login" type="submit" style="width: 100%;" value="Submit">
+                                        Login
+                                    </button>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        </div>
+                         <div style="clear: both;"></div>
+                        <div class="loginfooter grid-1-2 grid-row-line-height-space">
+                            <div class="column">
+                                <p class="disclaimer align-left">
+                                    By continuing, I agree to the <a href="#">Agreement</a>
+                                    and <a href="#">Privacy Policy</a>. Don't have an account? <a href="#/registration">Register</a>.
+                                </p>
+                            </div>                            
+                            <div style="clear: both;"></div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+        <!--/ko-->
+    </div>
+
+</div>

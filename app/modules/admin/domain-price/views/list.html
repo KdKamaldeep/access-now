@@ -1,0 +1,42 @@
+﻿<!-- BLOCK "TYPE 18" -->
+<div class="block">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="clear"></div>
+
+            <div class="col-md-12 wow fadeInUp" ng-init="DomainPriceHelper.All()">
+
+                <div class="form-wrapper">
+                    <table class="table">
+                        <tr>
+                            <th>TLD</th>
+                            <th>Registration Price</th>
+                            <th>Renewal Price</th>
+                            <th>Transfer Price</th>
+                            <th>Minimum Year Of Registration</th>
+                            <th>Allow Registration</th>
+                            <th>Allow Transfer</th>
+                            <th>Domain Active</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr ng-repeat="domain in DomainPrices">
+                            <td>{{domain.tld}}</td>
+                            <td>${{domain.registration_price}}</td>
+                            <td>${{domain.renewal_price}}</td>
+                            <td>${{domain.transfer_price}}</td>
+                            <td>{{domain.minimum_year_of_registration}}</td>
+                            <td>{{domain.allow_registration}}</td>
+                            <td>{{domain.allow_transfer}}</td>
+                            <td>{{domain.domain_active}}</td>
+                            <td><a href="/admin/domainprice/edit/{{domain.id}}">Edit</a>/<a href="javascript:" ng-click="DomainHelper.Delete(domain.id)">Delete</a></td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

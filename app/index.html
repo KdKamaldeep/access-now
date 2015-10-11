@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/swiper.css" rel="stylesheet" />
+    <link href="../bower_components/angular-growl-v2/build/angular-growl.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="js/intlInput/css/intlTelInput.css" rel="stylesheet" />
+    <!-- endbuild -->
+    
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/ng-busy/build/angular-busy.js"></script>
+    <script src="bower_components/angular-payments/lib/angular-payments.js"></script>
+    <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
+    <script src="bower_components/intl-tel-input/build/js/intlTelInput.min.js"></script>
+    <script src="bower_components/intl-tel-input/lib/libphonenumber/build/utils.js"></script>
+    <script src="bower_components/international-phone-number/releases/international-phone-number.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script src="js/intlInput/js/intlTelInput.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    
+    <script src="js/customjs.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="js/ngCart/ngCart.js"></script>
+
+    <script type="text/javascript" src="modules/app.js"></script>
+    <script src="modules/base/requestInterceptors.js"></script>
+    <script src="modules/base/storage-service.js"></script>
+    <script src="modules/base/loader-service.js"></script>
+    <script type="text/javascript" src="modules/base/api-config.js"></script>
+    <script type="text/javascript" src="modules/base/base-service.js"></script>
+    <script src="modules/base/cron-service.js"></script>
+    <script type="text/javascript" src="modules/base/compare.js"></script>
+    <script type="text/javascript" src="modules/base/requestInterceptors.js"></script>
+
+    <script type="text/javascript" src="modules/common/slider-init.js"></script>
+    <script type="text/javascript" src="modules/common//directives/swiper-directive.js"></script>
+
+    <script type="text/javascript" src="modules/home/controller.js"></script>
+
+    <!--Login Module-->
+    <script type="text/javascript" src="modules/account/controller.js"></script>
+    <script type="text/javascript" src="modules/account/login-service.js"></script>
+    <!--Login Module Ends-->
+
+    <!--Hosted Domain-->
+    <script type="text/javascript" src="modules/hosted-domains/hosted-domain-service.js"></script>
+    <script type="text/javascript" src="modules/hosted-domains/hosted-domain-controller.js"></script>
+    <script type="text/javascript" src="modules/common/directives/promotional-message.js"></script>
+    <script src="modules/hosted-domains/directives/search-domain.js"></script>
+    <!--Hosted Domain Ends-->
+
+    <!--Contanct Us -->
+    <script type="text/javascript" src="modules/contact-us/contact-us-service.js"></script>
+    <script type="text/javascript" src="modules/contact-us/controller.js"></script>
+    <script type="text/javascript" src="modules/contact-us/directives/map.js"></script>
+
+    <!--Contanct Us End-->
+
+    <!--Hosting Module-->
+    <script type="text/javascript" src="modules/hosting/controllers/hosting-controller.js"></script>
+    <script type="text/javascript" src="modules/hosting/services/hosting-service.js"></script>
+    <script type="text/javascript" src="modules/hosting/controllers/shared-controller.js"></script>
+    <script type="text/javascript" src="modules/hosting/controllers/vps-controller.js"></script>
+    <script type="text/javascript" src="modules/hosting/controllers/dedicated-controller.js"></script>
+    <!--Hosting Module End-->
+
+    <!--Page Module-->
+    <script type="text/javascript" src="modules/pages/controllers/host-about-controller.js"></script>
+    <script type="text/javascript" src="modules/pages/directives/host-faq/host-faq-accordian.js"></script>
+    <script type="text/javascript" src="modules/pages/controllers/host-faq-controller.js"></script>
+    <script type="text/javascript" src="modules/pages/controllers/host-testimonial.js"></script>
+    <script type="text/javascript" src="modules/pages/controllers/host-data-controller.js"></script>
+    <!--Page Module End-->
+
+    <!--Blog Module-->
+    <script type="text/javascript" src="modules/blog/controllers/blog-controller.js"></script>
+    <script type="text/javascript" src="modules/blog/controllers/blog-detail-controller.js"></script>
+    <!--Blog Module End-->
+
+    <script src="modules/checkout/checkout-service.js"></script>
+    <script src="modules/checkout/checkout-controller.js"></script>
+
+    <script src="modules/payment/payment-controller.js"></script>
+    <script src="modules/payment/thankyou-controller.js"></script>
+    <script src="modules/payment/payment-service.js"></script>
+
+
+    <script src="modules/admin/domain-price/domain-price-controller.js"></script>
+    <script src="modules/admin/domain-price/domain-price-service.js"></script>
+
+    <script src="modules/cart/cart-controller.js"></script>
+    <script src="modules/home/directives/services/serive-directive.js"></script>
+    <script src="modules/common/directives/checkout-button.js"></script>
+    <!-- endbuild -->
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>ShotLocal</title>
+</head>
+<!--<body ng-class="{'header-moved' : ShowHeaderMessage, 'header-floated' : !ShowHeaderMessage}">-->
+<body>
+    <div growl></div>
+    <!-- LOADER -->
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="title">Loading</div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="overview" style="height: 72px !important;">
+        <nav role="navigation" class="banner ">
+            <div class="content ">
+
+                <a href="Javascript:" id="openDropDown" data-link-label="Banner" class="drawer-link pull-left *-show-at-small">Services</a>
+                <a href="#/hosted-domains" class="drawer-link pull-left">Domain</a>
+                <a href="#/host-support" class="drawer-link pull-left">Support</a>
+                <a href="#/" id="logo" class="drawer-link pull-left">
+                    <div class="newlogo">
+                        <div class="cell-view" style="min-height: 100px;">
+                            <img src="img/shotlocalp-01.png" alt="" />
+                        </div>
+                    </div>
+                </a>
+                
+                    <ngcart-summary></ngcart-summary>
+                
+                <a href="#/login" class="pull-right gap-right-none" ng-show="!Auth">
+                    <span class="show-at-medium inline-block">Account</span></a>
+                <a busy="Logging Out..." busy-when-url="/api/user/logout" href="javascript:" ng-click="Logout()" class="pull-right gap-right-none" ng-show="Auth">
+                    <span class="show-at-medium inline-block">Logout</span></a>
+                <a href="#/hosted-domains" class="pull-right">
+                    <div class="hide-at-medium">
+                    </div>
+                    <span class=" show-at-medium inline-block">Shop</span></a>
+                <!--<a href="#/host-support" class="pull-right">
+                    <div class="hide-at-medium">
+                    </div>
+                    <span class=" show-at-medium inline-block">Support</span>
+                </a>-->
+
+            </div>
+            <div class="image"></div>
+        </nav>
+    </header>
+    <nav class="nav-drawer toggledropdown forcemargin" style="">
+        <div id="businesses-drawer" class="drawer">
+            <nav class="content pad-vert-small inverted anchorContainer">
+                <ul class="reset one-half-at-medium one-fourth-at-large">
+                    <li><a href="#/hosting"><span>Hosting</span></a></li>
+                    <li><a href="#/shared-hosting"><span>Shared</span></a></li>
+                    <li><a href="#/vps-hosting"><span>VPS</span></a></li>
+                    <li><a href="#/dedicated-hosting"><span>Dedicated</span></a></li>
+                </ul>
+                <ul class="reset one-half-at-medium one-fourth-at-large">
+                    <!--<li><a href="#/hosted-domains"><span>Pages</span></a></li>-->
+                    <li><a href="#/host-about"><span>About</span></a></li>
+                    <li><a href="#/host-faq"><span>FAQ</span></a></li>
+                    <li><a href="#/host-testimonial"><span>Testimonials</span></a></li>
+                    <li><a href="#/host-data-center"><span>Datacenters</span></a></li>
+
+                    <!--<li><a href="#/login"><span>Login/Register</span></a></li>-->
+
+
+                </ul>
+                <ul class="reset one-half-at-medium one-fourth-at-large">
+                    <li><a href="#/blog"><span>Blog</span></a></li>
+                    <li><a href="#/blog-detail"><span>Blog Detail</span></a></li>
+                    <li><a href="#/contact-us"><span>Contact us</span></a></li>
+
+                    <li><a href="#/host-support"><span>Support</span></a></li>
+                </ul>
+
+
+                <div style="clear: both;"></div>
+            </nav>
+        </div>
+
+    </nav>
+    <div class="subheader">
+        <div class="container-fluid">
+            <a id="subheader-logo" href="index.html">
+                <img src="img/shotlocalp-01.png" alt="" /></a>
+            <div class="subheader-content">
+                <div class="subheader-left">
+                    <a class="scroll-to-link subheader-link" data-rel="1">Our Services</a>
+                    <a class="scroll-to-link subheader-link" data-rel="2">Popular Plans</a>
+                    <a class="scroll-to-link subheader-link" data-rel="3">Why Choose Us</a>
+                    <a class="scroll-to-link subheader-link" data-rel="4">Testimonials</a>
+                    <a class="scroll-to-link subheader-link" data-rel="5">FAQ's</a>
+                    <a class="scroll-to-link subheader-link" data-rel="6">Registration</a>
+                    <a class="scroll-to-link subheader-link" data-rel="7">Guarantee</a>
+                </div>
+                <div class="subheader-right">
+                    <a class="button" href="#/checkout">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="content-wrapper" class="drilldown">
+
+        <!--<div class="container-above-header">
+            <promotional-message></promotional-message>
+        </div>-->
+
+        <div class="blocks-container">
+            <ng-view></ng-view>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-entry col-md-3">
+                    <h3 class="title">ShotLocal</h3>
+                    <div class="text">Duis posuere blandit orci sed tincidunt. Curabitur porttitor nisi ac nunc ornare, in fringilla nisl blandit. Duis posuere blandit orci sed tincidunt. Curabitur porttitor nisi ac nunc ornare, in fringilla nisl blandit. Praesent nisl sapien, semper quis convallis et, tempus vitae dolor.</div>
+                </div>
+                <div class="footer-entry col-md-2 col-sm-3 col-xs-6">
+                    <h3 class="title">ShotLocal</h3>
+                    <ul>
+                        <li><a href="hosting.html">Web Hosting</a></li>
+                        <li><a href="hosting.html">Reseller Hosting</a></li>
+                        <li><a href="host-vps.html">VPS Hosting</a></li>
+                        <li><a href="host-dedicated.html">Dedicated Hosting</a></li>
+                        <li><a href="hosting.html">Application Hosting</a></li>
+                        <li><a href="hosting.html">Windows Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-entry col-md-2 col-sm-3 col-xs-6">
+                    <h3 class="title">Company</h3>
+                    <ul>
+                        <li><a href="host-about.html">About ShotLocal</a></li>
+                        <li><a href="host-testimonials.html">Awards &amp; Reviews</a></li>
+                        <li><a href="host-about.html">Press &amp; Media</a></li>
+                        <li><a href="blog.html">Company Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="host-about.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix visible-xs"></div>
+                <div class="footer-entry col-md-5 col-sm-6 col-xs-12">
+                    <h3 class="title">Newsletter Subscribe</h3>
+                    <div class="text">Curabitur porttitor nisi ac nunc ornare, in fringilla nisl blandit. Sed quam metus, faucibus et pulvinar ut, volutpat ut orci. Integer sollicitudin cursus massa, non laoreet risus pretium eget.</div>
+                    <div class="subscription-form">
+                        <form>
+                            <input type="email" required value="" placeholder="Your Email..." />
+                            <input type="submit" value="" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row nopadding social-icons-wrapper">
+                <div class="col-xs-3 nopadding">
+                    <a class="social-icon" href="https://www.facebook.com/" target="_blank" style="background-color: #3b5998;">
+                        <img src="img/icon-17.png" alt="" />
+                    </a>
+                </div>
+                <div class="col-xs-3 nopadding">
+                    <a class="social-icon" href="https://plus.google.com/" target="_blank" style="background-color: #e02f2f;">
+                        <img src="img/icon-18.png" alt="" />
+                    </a>
+                </div>
+                <div class="col-xs-3 nopadding">
+                    <a class="social-icon" href="https://twitter.com/" target="_blank" style="background-color: #55acee;">
+                        <img src="img/icon-19.png" alt="" />
+                    </a>
+                </div>
+                <div class="col-xs-3 nopadding">
+                    <a class="social-icon" href="https://www.linkedin.com/" target="_blank" style="background-color: #007bb5;">
+                        <img src="img/icon-20.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="footer-menu">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="hosting.html">Hosting</a></li>
+                        <li><a href="host-domains.html">Domains</a></li>
+                        <li><a href="host-about.html">Pages</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="copyright">&copy; 2015 All rights reserved. ShotLocal</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-line">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-line-entry col-md-3 col-sm-6 col-xs-12">
+                        <img src="img/icon-22.png" alt="" />
+                        <div class="content">
+                            <div class="cell-view">24/7 Custtomer Support</div>
+                        </div>
+                    </div>
+                    <div class="footer-line-entry col-md-3 col-sm-6 col-xs-12">
+                        <img src="img/icon-23.png" alt="" />
+                        <div class="content">
+                            <div class="cell-view"><a href="mailto:support@Access Now.com">support@ShotLocal.com</a></div>
+                        </div>
+                    </div>
+                    <div class="footer-line-entry col-md-3 col-sm-6 col-xs-12">
+                        <img src="img/icon-24.png" alt="" />
+                        <div class="content">
+                            <div class="cell-view"><a href="tel:+48 555 8753 005">+48 555 8753 005</a></div>
+                        </div>
+                    </div>
+                    <div class="footer-line-entry col-md-3 col-sm-6 col-xs-12">
+                        <img src="img/icon-25.png" alt="" />
+                        <div class="content">
+                            <div class="cell-view"><a href="#">Live Chat</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
+
+    <script type="text/javascript">
+        //var wow = new WOW(
+        //    {
+        //        boxClass: 'wow',      // animated element css class (default is wow)
+        //        animateClass: 'animated', // animation css class (default is animated)
+        //        offset: 100,          // distance to the element when triggering the animation (default is 0)
+        //        mobile: true,       // trigger animations on mobile devices (default is true)
+        //        live: true,       // act on asynchronously loaded content (default is true)
+        //        callback: function (box) {
+        //            // the callback is fired every time an animation is started
+        //            // the argument that is passed in is the DOM node being animated
+        //        }
+        //    }
+        //);
+        //wow.init();
+        $(function () {
+            $(document).on('click', '.anchorContainer>ul>li>a', function () {
+                $("#openDropDown").click();
+            });
+            $(document).on("click", "#openDropDown", function () {
+
+                var container = $(".toggledropdown");
+                var wrapper = $(".drilldown");
+
+                if (container.find("#businesses-drawer").hasClass("active")) {
+                    container.find("#businesses-drawer").removeClass("active");
+                    wrapper.animate({ 'paddingTop': '72px' }, 500);
+                    container.css("min-height", "0px");
+                }
+                else {
+                    wrapper.animate({ 'paddingTop': '225px' }, 500);
+                    container.css("min-height", "180px");
+                    container.find("#businesses-drawer").addClass("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+﻿
+<div class="contentWrap pad-vert-medium">
+
+    <div class="javascript-only">
+        <div class="step active-section" data-bind="with: userSignup, css: {&quot;active-section&quot;: userSignup.isActive}, visible: userSignup.isActive" id="userSignup">
+            <fieldset>
+                <div class="intro">
+                    <h4>Let’s get started.</h4>
+                    <p>Signing up for AccessNow is fast and free — no commitments or long-term contracts.</p>
+                </div>
+            </fieldset>
+            <div class="pad-vert-small">
+                <fieldset class="border-top pad-top-small">
+                    <form ng-submit="AccountHelper.SignUp()" id="user-signup-form" method="post" >
+                        <div class="grid-1-2 grid-row-line-height-space">
+                            <div class="column">
+                                <div class="field email-field" data-bind="validation:email" data-required="false">
+                                    <label for="email">First Name</label>
+                                    <div class="input-element">
+                                        <input ng-model="SignUpModel.FirstName" placeholder="First Name" id="email1" name="email" required="required" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column columnRight">
+                                <div class="field email-field" data-bind="validation:emailConfirmation" data-required="false">
+                                    <label for="email_confirmation">Last Name</label><div class="input-element">
+                                        <input autocomplete="off" placeholder="Last Name" ng-model="SignUpModel.LastName" required="required" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="grid-1-2 grid-row-line-height-space">
+                            <div class="column">
+                                <div class="field email-field" data-bind="validation:email" data-required="false">
+                                    <label for="email">Enter your email</label>
+                                    <div class="input-element">
+                                        <input placeholder="you@example.com" ng-model="SignUpModel.Email" required="required" type="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column columnRight">
+                                <div class="field email-field" data-bind="validation:emailConfirmation" data-required="false">
+                                    <label for="email_confirmation">Confirm your email</label><div class="input-element">
+                                        <input autocomplete="off" placeholder="you@example.com" required="required" type="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="grid-1-2 grid-row-line-height-space pad-top-line-height">
+                            <div class="column">
+                                <div class="field password-field" data-bind="validation:password" data-required="false">
+                                    <label for="password">Create a password</label><div class="password-input">
+                                        <input id="password" ng-model="SignUpModel.Password" name="password" placeholder="Password" required="required" type="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column columnRight">
+                                 <div class="field password-field" data-bind="validation:password" data-required="false">
+                                    <label for="password">Confirm Password</label><div class="password-input">
+                                        <input id="password1" ng-model="SignUpModel.ConfirmPassword" password-verify="SignUpModel.Password"
+                                            name="text" placeholder="Confirm Password" required="required" type="password">
+                                    </div>
+                                </div>
+                               <!-- <div class="field select-field" ng-init="AccountHelper.BindCountries()">
+                                    <label for="country_code">Country</label><div class="input-element">
+                                        <div class="select">
+
+                                            <select class="fieldEntryselect" required name="Country"
+                                                ng-model="CheckoutModel.Country">
+                                                <option ng-repeat="country in Countries" ng-selected="{{country.code==SignUpModel.Country}}"
+                                                    value="{{country.code}}">{{country.name}}</option>
+                                            </select><i></i>
+                                        </div>
+                                    </div>
+                                </div>-->
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                       <!-- <div class="grid-1-2 grid-row-line-height-space pad-top-line-height">
+                            <div class="column">
+                                <div class="checkbox-entry checkbox active nomargin">
+                                    <input type="checkbox" checked ng-model="SignUpModel.RecieveNewsLetter">
+                                    <label>I want to receive news and special offers</label>
+
+                                </div>
+                            </div>
+                            <div class="column columnRight">
+                                <div class="checkbox-entry radio active nomargin">
+                                    <input type="radio" ng-model="SignUpModel.IsPrivateUser" name="radiobutton" value="true" checked>
+                                    <label>I Am Private User</label>
+
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="grid-1-2 grid-row-line-height-space pad-top-line-height">
+                            <div class="column">
+                                <div class="checkbox-entry checkbox nomargin">
+                                    <input type="checkbox" ng-model="SignUpModel.TermsAndConditions">
+                                    <label>I agree with the Terms and Conditions</label>
+
+                                </div>
+
+
+                            </div>
+                            <div class="column columnRight">
+                                <div class="checkbox-entry radio nomargin">
+                                    <input type="radio" ng-model="SignUpModel.IsPrivateUser" value="false" name="radiobutton">
+                                    <label>I Am Corporate User</label>
+
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>-->
+                        <div style="clear: both;"></div>
+                        <div class="button-field grid-1-2 grid-row-line-height-space">
+                            <div class="column">
+                                <p class="disclaimer align-left">
+                                    By continuing, I agree to the <a href="#">Agreement</a>
+                                    and <a href="#">Privacy Policy</a>. Already have an account? <a href="#/login">Sign in</a>.
+                                </p>
+                            </div>
+                            <div class="column">
+
+                                <div class="ng-isolate-scope" style="width: 100%;">
+                                    <button class="btnContinue" busy="Submitting..." busy-when-url="/api/user/create" type="submit" style="width: 100%;" value="Submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+        <!--/ko-->
+    </div>
+
+</div>

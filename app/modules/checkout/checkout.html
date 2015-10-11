@@ -1,0 +1,128 @@
+﻿<div class="content pad-vert-medium">
+
+    <div class="javascript-only">
+        <div class="step active-section" id="userSignup">
+            <fieldset>
+                <div class="intro">
+                    <h4>Tell us about your Billing Information.</h4>
+                    <p>Signing up for AccessNow is fast and free — no commitments or long-term contracts.</p>
+                </div>
+            </fieldset>
+            <div class="pad-vert-small">
+                <fieldset class="border-top pad-top-small">
+                    <form ng-submit="CheckoutHelper.MoveToPaymentInfo()" method="post">
+                        <div class="grid-1-2 grid-row-line-height-space">
+                            <div class="column">
+                                <div class="field email-field" data-bind="validation:email" data-required="false">
+                                    <label for="email">Address 1</label>
+                                    <div class="input-element">
+                                        <input type="text" placeholder="Address 1" ng-model="CheckoutModel.Address" required id="Text5" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column columnRight">
+                                <div class="field email-field" data-bind="validation:emailConfirmation" data-required="false">
+                                    <label for="email_confirmation">Company Name</label><div class="input-element">
+                                        <input type="text" placeholder="Company Name" ng-model="CheckoutModel.CompanyName"  required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="grid-1-2 grid-row-line-height-space pad-top-line-height">
+                            <div class="column">
+                                <div class="field password-field" data-bind="validation:password" data-required="false">
+                                    <label for="password">Domain Password</label><div class="password-input">
+                                        <input type="password" ng-model="CheckoutModel.Password" required id="Password1" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column columnRight">
+                                <div class="field select-field" data-bind="false" data-required="false">
+                                    <div class="field select-field" ng-init="CheckoutHelper.BindCountries()">
+                                        <label for="country_code">Country</label><div class="input-element">
+                                            <div class="select">
+
+                                                <select class="fieldEntryselect" required name="Country"
+                                                    ng-model="CheckoutModel.Country">
+                                                    <option ng-selected="{{country.code==CheckoutModel.Country}}" ng-repeat="country in Countries"
+                                                        value="{{country.code}}">{{country.name}}</option>
+                                                </select><i></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="grid-1-2 grid-row-line-height-space pad-top-line-height">
+                            <div class="column">
+                                <div class="field password-field" >
+                                    <label for="password">State</label><div class="password-input">
+                                        <input type="text" placeholder="State" ng-model="CheckoutModel.State" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column columnRight">
+                                <div class="field password-field" data-bind="validation:password" data-required="false">
+                                    <label for="password">City</label><div class="password-input">
+                                        <input type="text" placeholder="City" ng-model="CheckoutModel.City" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="clear: both;"></div>
+                        </div>
+
+
+
+                        <div class="grid-1-2 grid-row-line-height-space pad-top-line-height">
+                            <div class="column">
+
+                                <div class="field select-field" data-bind="false" data-required="false">
+                                    <div class="field password-field" data-bind="validation:password" data-required="false">
+                                        <label for="password">Zip Code</label><div class="password-input">
+                                            <input type="text" placeholder="Zip Code" ng-model="CheckoutModel.ZipCode"  required/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="column columnRight">
+                                <div class="field select-field" >
+                                    <div class="field password-field" >
+                                        <label for="password">Phone</label><div class="password-input">
+                                            <input type="text"  placeholder="Phone" ng-model="CheckoutModel.Phone" required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ``
+                            <div style="clear: both;"></div>
+                        </div>
+
+                        <div style="clear: both;"></div>
+                        <div class="button-field grid-1-2 grid-row-line-height-space">
+                            <div class="column">
+                                <p class="disclaimer align-left">
+                                    By continuing, You will not be charged yet.
+                                    <br />
+                                    Please read our <a href="#">Agreement</a>
+                                    and <a href="#">Privacy Policy</a>.for more information.
+                                </p>
+                            </div>
+                            <div class="column">
+                                <div class="ng-isolate-scope" style="width: 100%;">
+                                    <input class="btnContinue" type="submit" style="width: 100%;" value="Submit">
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+        <!--/ko-->
+    </div>
+</div>
