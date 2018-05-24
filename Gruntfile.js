@@ -6,7 +6,7 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
-
+//TODO: Need to upadte it.
 module.exports = function (grunt) {
 
     // Time how long tasks take. Can help when optimizing build times
@@ -24,7 +24,8 @@ module.exports = function (grunt) {
         app: require('./bower.json').appPath || 'app',
         dist: 'dist'
     };
-
+  
+    //TODO: Need to remove it.
     // Define the configuration for all the tasks
     grunt.initConfig({
 
@@ -70,7 +71,7 @@ module.exports = function (grunt) {
         // The actual grunt server settings
         connect: {
             options: {
-                port: 9000,
+                port: 9000, //TODO: PORT need to be non static.
                 // Change this to '0.0.0.0' to access the server from outside.
                 hostname: 'localhost',
                 livereload: 35729
